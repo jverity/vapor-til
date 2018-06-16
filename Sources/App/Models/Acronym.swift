@@ -17,7 +17,7 @@ extension Acronym: PostgreSQLModel {}
 extension Acronym: Migration {
   static func prepare(on connection: PostgreSQLConnection) -> Future<Void> {
     return Database.create(self, on: connection) { builder in
-      builder.field(for: \.id, type: .serial)
+      builder.field(for: \.id, type: .bigserial)
       builder.field(for: \.short)
       builder.field(for: \.long)
     }
